@@ -20,8 +20,14 @@ app.get("/", (_, res) => {
 
 io.on("connection", (socket) => {
     console.log("a user connected");
-    socket.on('chat:message', (msg) => socket.emit('chat:message', msg));
-    socket.on('chat:join', (msg) => socket.emit('chat:userJoined', msg));
+    socket.on('chat:message', (msg) => {
+        console.log('chat:message', msg);
+        io.emit('chat:message', msg);
+    });
+    socket.on('chat:join', (msg) => {
+        console.log('chat:join', msg);
+        io.emit('chat:userJoined', msg);
+    });
     socket.on("disconnect", () => { console.log("user disconnected") });
 });
 

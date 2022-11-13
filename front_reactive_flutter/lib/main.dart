@@ -5,6 +5,8 @@ import 'package:front_reactive_flutter/view/on_boarding_screen.dart';
 
 void main() => runApp(const ProviderScope(child: MyApp()));
 
+final navKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       initialRoute: OnBoardingScreen.route,
+      navigatorKey: navKey,
       routes: {
         ChatScreen.route: (_) => const ChatScreen(),
         OnBoardingScreen.route: (_) => OnBoardingScreen(),
