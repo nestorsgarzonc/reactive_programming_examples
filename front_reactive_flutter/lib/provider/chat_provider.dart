@@ -64,7 +64,7 @@ class ChatNotifier extends StateNotifier<ChatState> {
 
   void _initSocket() {
     socket = io.io(
-      'https://3e7b-181-53-12-248.ngrok.io',
+      'https://backend-q445.onrender.com',
       io.OptionBuilder().setTransports(['websocket']).build(),
     );
     socket.onConnect((_) => print('connect'));
