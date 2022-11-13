@@ -72,7 +72,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
             ),
             const Divider(),
             Padding(
-              padding: const EdgeInsets.only(left: 12, right: 12),
+              padding: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
               child: Row(
                 children: [
                   Expanded(
